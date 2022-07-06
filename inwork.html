@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>soon.</title>
+        <link rel="stylesheet" href="inwork.css" />
+        <script src="https://cdn.rawgit.com/bradley/Blotter/master/build/blotter.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/rollingDistortMaterial.min.js"></script>
+        
+    </head>
+    <body>
+        <a href="index.html"><div id="text"></div></a>
+
+        <div class="social-media">
+            <ul>
+                  <li><a href="https://lolz.guru/elegy/">lolzguru</a></li>
+                  <li><a href="https://t.me/elegyschizophrenic">telegram</a></li>
+            </ul>
+      </div>
+
+        <script>
+            let Size = 0.001;
+
+            function increaseSize() {
+                var elem = document.getElementById("text");
+                var text = new Blotter.Text("CALL ME - ELEGY", {
+                    family: "Lucida Console",
+                    weight: 50,
+                    size: 100,
+                    fill: "white"
+                });
+
+                var material = new Blotter.RollingDistortMaterial();
+
+                material.uniforms.uSineDistortAmplitude.value = 0.04;
+
+                var blotter = new Blotter(material, {
+                    texts: text
+                });
+
+                var scope = blotter.forText(text);
+
+                scope.appendTo(elem);
+
+                Size += 0.001;
+            }
+
+            increaseSize();
+        </script>
+    </body>
+</html>
